@@ -3,9 +3,22 @@
     font-family: 'Work Sans', sans-serif;
 }
 
+main {
+    margin: 0 200px;
+}
+
 /* common shared styles */
 .text-linear {
     color: #FF42A5;
+}
+
+.text-gradent {
+    background: linear-gradient(180deg, #F948B2 0%, #8758F1 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 48px;
+    font-weight: 700;
 }
 
 .btn-primary {
@@ -18,6 +31,20 @@
     padding: 21px 40px;
 }
 
+.section-title {
+    color: #0B0223;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.section-description {
+    color: #534C64;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: lowercase;
+}
+
 /* header styles */
 
 /* nav styles */
@@ -25,7 +52,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 30px 200px;
+    margin: 20px 200px;
 }
 
 .nav-title {
@@ -85,12 +112,7 @@ nav a {
     margin: 0;
 }
 
-.section-description {
-    color: #534C64;
-    font-size: 20px;
-    font-weight: 500;
-    text-transform: lowercase;
-}
+
 
 .btn-secondary {
     border-radius: 48px;
@@ -101,4 +123,62 @@ nav a {
     color: white;
     padding: 21px 40px;
     margin-left: 24px;
+}
+
+/* Online Games related style */
+.games{
+    margin: 100px 0;
+}
+.games-container {
+    text-align: center;
+}
+
+.games-photos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-pic {
+    border-radius: 16px;
+    width: 342px;
+    height: 400px;
+}
+
+
+/* Responsive related styles */
+/* Mobile devices */
+@media screen and (max-width:576px) {
+
+    nav,
+    .banner,
+    .games-photos {
+        flex-direction: column;
+    }
+    nav{
+        margin: 10px;
+    }
+    nav>ul {
+        flex-direction: column;
+        margin: 0px;
+    }
+    nav li {
+        margin: 10px;
+    }
+    .banner{
+        padding: 10px;
+    }
+
+}
+
+/* Tablet devices */
+@media screen and (min-width:576px) and (max-width:960px) {
+    nav {
+        justify-content: space-between;
+        margin: 10px;
+    }
+
+    .banner {
+        flex-direction: column;
+
+    }
 }
