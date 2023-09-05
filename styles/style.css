@@ -42,7 +42,6 @@ main {
     color: #534C64;
     font-size: 20px;
     font-weight: 500;
-    text-transform: lowercase;
 }
 
 /* header styles */
@@ -126,9 +125,10 @@ nav a {
 }
 
 /* Online Games related style */
-.games{
+.games {
     margin: 100px 0;
 }
+
 .games-container {
     text-align: center;
 }
@@ -141,8 +141,32 @@ nav a {
 .game-pic {
     border-radius: 16px;
     width: 342px;
-    height: 400px;
+    /* height: 400px; */
 }
+
+/* play Instantly related styles */
+.play-instantly {
+    display: flex;
+    /* text-align: center; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-play {
+    background: linear-gradient(180deg, #F948B2 0%, #8758F1 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.above-pic{
+    width: 300px;
+    height: 350px;
+    border-radius: 8px;
+    position: relative;
+    bottom: 280px;
+    margin-left: -150px;
+}
+
 
 
 /* Responsive related styles */
@@ -151,34 +175,55 @@ nav a {
 
     nav,
     .banner,
-    .games-photos {
+    .games-photos,
+    .play-instantly  {
         flex-direction: column;
     }
-    nav{
+
+    nav {
         margin: 10px;
     }
+
     nav>ul {
         flex-direction: column;
         margin: 0px;
     }
+
     nav li {
         margin: 10px;
     }
-    .banner{
+
+    .banner {
         padding: 10px;
+        margin: 0;
+        /* image thik korte hobe */
+    }
+    .above-pic img{
+        width: 100%;
     }
 
 }
 
 /* Tablet devices */
 @media screen and (min-width:576px) and (max-width:960px) {
-    nav {
+    main {
+        margin: 0 20px;
+    }
+
+    nav,
+    .games-photos {
         justify-content: space-between;
         margin: 10px;
     }
 
-    .banner {
+    .banner, 
+    .play-instantly {
         flex-direction: column;
 
+    }
+
+    .games-photos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
