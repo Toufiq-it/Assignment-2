@@ -118,7 +118,9 @@ nav a {
     margin: 0;
 }
 
-
+.banner img {
+    width: 100%;
+}
 
 .btn-secondary {
     border-radius: 48px;
@@ -130,6 +132,7 @@ nav a {
     padding: 21px 40px;
     margin-left: 24px;
 }
+
 
 /* Online Games related style */
 .games {
@@ -149,16 +152,40 @@ nav a {
 .game-pic {
     border-radius: 16px;
     width: 342px;
-    /* height: 400px; */
+    height: 400px;
 }
 
 .watch:hover {
-    border-radius: 16px;
-    border: 4px solid var(--Linear, #FF42A5);
+    
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%);
 }
-.watch:hover{
+
+.watch:hover {
     background-image: unset;
+}
+.relative{
+    position: relative;
+}
+.text{
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    background-color: #3e394b;
+    width: 340px;
+    height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.65;
+    visibility: hidden;
+    cursor: pointer;
+}
+.relative:hover .text{
+    visibility: visible;
+    border-radius: 16px;
+    border: 4px solid var(--Linear, #FF42A5);
 }
 
 /* play Instantly related styles */
@@ -185,6 +212,11 @@ nav a {
     bottom: 280px;
     margin-left: -150px;
 }
+
+.p-pic{
+    width: 90%;
+}
+
 
 /* More games styles */
 .more-games {
@@ -264,11 +296,13 @@ footer h3 {
     padding-right: 20px;
     padding-left: 10px;
 }
-.footer-text{
+
+.footer-text {
     display: flex;
     justify-content: center;
     margin-top: 40px;
 }
+
 .f-p-text {
     color: rgba(255, 255, 255, 0.60);
     text-align: center;
@@ -284,13 +318,20 @@ footer h3 {
 
     nav,
     .banner,
+    .games,
     .games-photos,
     .play-instantly {
         flex-direction: column;
     }
 
-    nav {
+    nav,
+    .banner,
+    .play-instantly,
+    .games-photos {
         margin: 10px;
+    }
+    .p-pic2{
+        display: none;
     }
 
     nav>ul {
@@ -305,7 +346,6 @@ footer h3 {
     .banner {
         padding: 10px;
         margin: 0;
-        /* image thik korte hobe */
         width: 100%;
     }
 
@@ -313,18 +353,51 @@ footer h3 {
         width: 100%;
     }
 
+    .section-description {
+        margin: 10px;
+    }
+
+    .more-games,
+    footer,
+    .footer-element {
+        padding: 10px;
+    }
+
+    .footer-icons,
+    .icons,
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 20px;
+    }
+    footer{
+        padding-bottom: 50px;
+    }
+
 }
 
 /* Tablet devices */
 @media screen and (min-width:576px) and (max-width:960px) {
     main {
-        margin: 0 20px;
+        /* margin: 0 20px; */
     }
-
-    nav,
     .games-photos {
-        justify-content: space-between;
-        margin: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    nav,
+    .banner,
+    .game-pic,
+    .more-games,
+    footer {
+        padding: 20px;
+    }
+    .game-pic{
+        padding-right: 50px;
+    }
+    nav,
+    .games-photos{
+        margin: 20px;
     }
 
     .banner,
@@ -332,9 +405,8 @@ footer h3 {
         flex-direction: column;
 
     }
-
-    .games-photos {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+    footer{
+        padding: 70px 0;
     }
+
 }
